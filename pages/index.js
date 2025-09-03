@@ -6,7 +6,8 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/list")
       .then((res) => res.json())
-      .then((rows) => setData(rows));
+      .then((rows) => setData(rows))
+      .catch((err) => console.error("Fetch error:", err));
   }, []);
 
   return (
